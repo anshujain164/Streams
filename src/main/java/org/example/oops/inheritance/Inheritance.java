@@ -1,7 +1,5 @@
 package org.example.oops.inheritance;
 
-import javax.sound.midi.SysexMessage;
-
 class BankAccount{
     protected String accountNumber;
     protected double balance;
