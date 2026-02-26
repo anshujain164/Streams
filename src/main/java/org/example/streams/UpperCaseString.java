@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 
 public class UpperCaseString {
     public static void main(String[] args){
-        List<String> words = List.of("hi","hello","world" ,"anshu","vinay","preksha");
+        List<String> words = List.of("Hi","Hello","World" ,"Anshu","Vinay","Preksha");
 
         /// Task: Convert to uppercase and join with commas → "HI,HELLO,WORLD".
         String upperCase = words.stream()
@@ -84,6 +84,30 @@ public class UpperCaseString {
                 .filter(s -> s.chars().anyMatch(c -> "aeiouAEIOU".indexOf(c) != -1))
                 .collect(Collectors.toList());
         System.out.println(vowelsInList);
+
+        /// find string which starts with 'A'
+        List<String> stringStartWithA = words.stream()
+                .filter(word -> word.startsWith("A"))
+                .collect(Collectors.toList());
+
+        System.out.println(stringStartWithA);
+
+        /// count total number of character in all strings combined
+        Integer numberOfCharacter = words.stream()
+                .mapToInt(String :: length)
+                .sum();
+        System.out.println(numberOfCharacter);
+
+        /// Count total number of vowels in the entire list
+        long numberOfVowels = words.stream()
+                .flatMapToInt(String :: chars)
+                .map(Character :: toLowerCase)
+                .filter(s -> "aeiou".indexOf(s) >= 0)
+                .count();
+        System.out.println(numberOfVowels);
+
+        ///	Remove names that contain letter ‘i’
+        
 
     }
 }
