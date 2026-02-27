@@ -2,7 +2,7 @@ package org.example.oops.constructor;
 class Person{
     protected String name;
     public Person(){
-        this("unnamed");
+        this("unnamed");/// this calls the below parametrized constructor
     }
 
     public Person(String name){
@@ -19,7 +19,7 @@ class Student extends Person{
     }
 
     public Student (String name , int grade){
-        super(name);
+        super(name);/// this calls parent class constructor
         this.grade = grade;
         System.out.println("constructor of Student  : "+ name + " : " + grade);
     }
